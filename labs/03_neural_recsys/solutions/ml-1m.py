@@ -32,16 +32,16 @@ max_item_id = all_ratings['item_id'].max()
 
 from sklearn.model_selection import train_test_split
 
-ratings_train, ratings_test = train_test_split(
+train_data, test_data = train_test_split(
     all_ratings, test_size=0.2, random_state=0)
 
-user_id_train = ratings_train['user_id']
-item_id_train = ratings_train['item_id']
-rating_train = ratings_train['rating']
+user_id_train = train_data['user_id']
+item_id_train = train_data['item_id']
+rating_train = train_data['rating']
 
-user_id_test = ratings_test['user_id']
-item_id_test = ratings_test['item_id']
-rating_test = ratings_test['rating']
+user_id_test = test_data['user_id']
+item_id_test = test_data['item_id']
+rating_test = test_data['rating']
 
 user_id_input = Input(shape=[1], name='user')
 item_id_input = Input(shape=[1], name='item')
